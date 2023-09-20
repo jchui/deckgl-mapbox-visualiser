@@ -45,7 +45,6 @@ const MapCanvas = ({ position, activeLayers }: any) => {
           getElevation: (d: any) => 100,
           getPosition: (d: any) => [d.lng, d.lat],
           pickable: true,
-          // 3d building
         });
         return hexagonLayer;
       } else if (e.layer === "greatcircle") {

@@ -5,27 +5,17 @@ import FilteredCombinedData2 from "./json/FilteredCombinedData-2.json";
 
 const layers = [
   {
-    id: 1,
-    name: "Data set 1",
-    description: "",
-    json: ScatterplotData1,
-    layer: "scatterplot",
-    longitude: -74,
-    latitude: 40.76,
-    isShown: false,
-  },
-  {
-    id: 2,
+    id:1,
     name: "Data set 2",
     description: "",
     json: GreatCircleData1,
     layer: "greatcircle",
-    longitude: -122.38,
-    latitude: 37.6,
+    longitude: -1.4157,
+    latitude: 52.2324,
     isShown: false,
   },
   {
-    id: 3,
+    id: 2,
     name: "Data set 3",
     description: "",
     json: HexagonLayerData,
@@ -35,7 +25,7 @@ const layers = [
     isShown: false,
   },
   {
-    id: 5,
+    id: 3,
     name: "Data set 5",
     description: "",
     json: FilteredCombinedData2,
