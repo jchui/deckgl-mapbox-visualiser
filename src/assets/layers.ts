@@ -10,8 +10,8 @@ const layers = [
     description: "",
     json: GreatCircleData1,
     layer: "greatcircle",
-    longitude: -1.4157,
-    latitude: 52.2324,
+    longitude: -1.49,
+    latitude: 53.5,
     isShown: false,
   },
   {
@@ -20,8 +20,8 @@ const layers = [
     description: "",
     json: HexagonLayerData,
     layer: "hexagon",
-    longitude: -1.4157,
-    latitude: 52.2324,
+    longitude: -1.49,
+    latitude: 53.5,
     isShown: false,
   },
   {
@@ -30,8 +30,8 @@ const layers = [
     description: "",
     json: FilteredCombinedData2,
     layer: "scatterplot",
-    longitude: -1.4157,
-    latitude: 52.2324,
+    longitude: -1.49,
+    latitude: 53.5,
     isShown: false,
   },
 ];

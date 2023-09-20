@@ -27,7 +27,7 @@ const Home = () => {
       ...position,
       latitude: parseFloat(e.latitude),
       longitude: parseFloat(e.longitude),
-      zoom: 6,
+      zoom: 5.5,
     });
     setSelectedLayers({
       name: e.name,
