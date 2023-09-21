@@ -1,8 +1,7 @@
 import Hospitals from './json/Hospitals.json';
 import GPPractices from './json/GPPractices.json';
 import LondonMTN from './json/LondonMTN.json';
-import FilteredCombinedData2 from './json/FilteredCombinedData-2.json';
-import HexagonLayerData from './json/HexagonLayerData.json';
+import UKPopulation from './json/UKPopulation.json';
 
 const commonCoordinates = {
   longitude: -1.49,
@@ -13,7 +12,7 @@ const commonCoordinates = {
 const layers = [
   {
     id: 1,
-    name: 'Hospitals (England) Location Dataset',
+    name: 'Hospital (England) Locations',
     description: 'Hospitals across England plotted by longitude + latitude. Hospitals are marked in blue. Data from 2020.',
     source: 'https://www.nhs.uk/about-us/nhs-website-datasets/',
     json: Hospitals,
@@ -24,7 +23,7 @@ const layers = [
   },
   {
     id: 2,
-    name: 'GP Practices (England) Location Dataset',
+    name: 'GP Practice (England) Locations',
     description: 'GP Practices across England plotted by longitude + latitude. GP Practices are marked in green. Data from 2020.',
     source: 'https://www.nhs.uk/about-us/nhs-website-datasets/',
     json: GPPractices,
@@ -51,18 +50,10 @@ const layers = [
   },
   {
     id: 4,
-    name: 'Data set 5',
-    description: '',
-    json: FilteredCombinedData2,
-    layer: 'scatterplot',
-    isShown: false,
-    ...commonCoordinates,
-  },
-  {
-    id: 5,
-    name: 'Data set 4',
-    description: '',
-    json: HexagonLayerData,
+    name: 'UK Population Density Map',
+    description: 'UK Population Density Heatmap with 3D visualisation. Obtained from Deck.gl github examples.',
+    json: UKPopulation,
+    opacity: 0.5,
     layer: 'hexagon',
     isShown: false,
     ...commonCoordinates,

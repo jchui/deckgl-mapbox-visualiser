@@ -45,6 +45,7 @@ function MapCanvas({ position, activeLayers }: any) {
             elevationScale: e.json && e.json.length ? 50 : 0,
             extruded: true,
             getColor: [255, 0, 100],
+            opacity: e.opacity,
             getElevation: (d: any) => 100,
             getPosition: (d: any) => [d.lng, d.lat],
             pickable: true,
