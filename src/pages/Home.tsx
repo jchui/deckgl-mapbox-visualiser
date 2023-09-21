@@ -86,7 +86,7 @@ function Home() {
                 <p className="source">{e.source}</p>
                 <span className="active">Active</span>
                 <span className="layer-type">
-                  Type:
+                  Type:&nbsp;
                   {e.layer}
                 </span>
               </span>
