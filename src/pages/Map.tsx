@@ -29,7 +29,7 @@ function MapCanvas({ position, activeLayers }: any) {
           return new ScatterplotLayer({
             id: e.name,
             data: e.json,
-            radiusScale: 10,
+            radiusScale: e.radius,
             radiusMinPixels: 1,
             getPosition: (d: any) => d.coordinates,
             getFillColor: e.scatterplotColor,
