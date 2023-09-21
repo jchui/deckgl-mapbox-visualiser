@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 * {
   margin: 0;
@@ -6,7 +6,7 @@
 
 body {
   background-color: #151515;
-  font-family: 'Montserrat';
+  font-family: 'Poppins', sans-serif;
 }
 
 p {
@@ -76,9 +76,10 @@ p {
       }
 
       .description {
-        line-height: 15px;
+        line-height: 20px;
         padding-top: 5px;
         margin-left: 18px;
+        font-size: 12px;
       }
 
       .source {
