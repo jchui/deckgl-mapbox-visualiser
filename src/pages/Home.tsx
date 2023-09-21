@@ -7,9 +7,9 @@ const Home = () => {
   const [selectedLayers, setSelectedLayers] = useState<any>([]);
   const [layerData, setLayerData] = useState<any>(layers);
   const [position, setPosition] = useState({
-    latitude: 0,
-    longitude: 0,
-    zoom: 0,
+    longitude: -1.49,
+    latitude: 53.5,
+    zoom: 5.5,
   });
 
   const toggleLayer = (e: any) => {
