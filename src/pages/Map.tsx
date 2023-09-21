@@ -8,8 +8,6 @@ import DeckGL, {
 import { Map } from "react-map-gl";
 import { useMemo, useState } from "react";
 import Loader from "../components/Loader";
-const MALE_COLOR = [0, 128, 255];
-const FEMALE_COLOR = [255, 0, 128];
 const MAP_STYLE =
   "https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json";
 // @ts-ignore
@@ -26,7 +24,7 @@ const MapCanvas = ({ position, activeLayers }: any) => {
           radiusScale: 10,
           radiusMinPixels: 1,
           getPosition: (d: any) => [d[0], d[1], 0],
-          getFillColor: (d: any) => (d[2] === 1 ? MALE_COLOR : FEMALE_COLOR),
+          getFillColor: e.scatterplotColor,
           extruded: true, // Enable extrusion
           pickable: true,
         });
