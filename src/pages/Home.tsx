@@ -1,9 +1,18 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
 import { useState } from 'react';
 import { AiFillDatabase } from 'react-icons/ai';
 import layers from '../assets/layers';
 import MapCanvas from './Map';
 
 function Home() {
+  // eslint-disable-next-line no-unused-vars
   const [selectedLayers, setSelectedLayers] = useState<any>([]);
   const [layerData, setLayerData] = useState<any>(layers);
   const [position, setPosition] = useState({
