@@ -117,6 +117,26 @@ p {
   }
 }
 
+.deck-tooltip {
+  background-color: #ffffffd9 !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+  border: none !important;
+  border-radius: 5px;
+
+  h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+  }
+
+  p {
+    font-size: 10px;
+    margin-top: 5px;
+    color: #757575;
+  }
+}
+
 .footer {
   position: absolute;
   bottom: 25px;

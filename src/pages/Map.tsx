@@ -31,7 +31,7 @@ function MapCanvas({ position, activeLayers }: any) {
             data: e.json,
             radiusScale: 10,
             radiusMinPixels: 1,
-            getPosition: (d: any) => [d[0], d[1], 0],
+            getPosition: (d: any) => d.coordinates,
             getFillColor: e.scatterplotColor,
             extruded: true,
             pickable: true,
@@ -110,13 +110,23 @@ function MapCanvas({ position, activeLayers }: any) {
         layers={layers || []}
         onWebGLInitialized={() => setIsLoading(false)}
         getTooltip={(object: any) => {
-          if (object.layer && object.coordinate) {
+          if (object.layer && object.coordinate && object.object) {
+            let tooltipName = object.layer.id; // Other Layers
+            if (object?.object?.name) { // Scatterplot Layer
+              tooltipName = object.object.name;
+            } else if (object?.object?.from?.name) { // Arc Layer
+              tooltipName = object.object.from.name + object.object.to.name;
+            }
+
+            const lat = object?.coordinate[0];
+            const lng = object?.coordinate[1];
             return {
               html: `
                 <div>
-                  <h2>${object?.layer?.id}</h2>
-                  <p>X: ${object?.coordinate[0]}</p>
-                  <p>Y: ${object?.coordinate[1]}</p>
+                  <center>
+                    <h2>${tooltipName}</h2>
+                    <p>lat ${Math.round(lat * 100) / 100000}, lng ${Math.round(lng * 100) / 100000}</p>
+                  </center>
                 </div>
                 `,
             };
