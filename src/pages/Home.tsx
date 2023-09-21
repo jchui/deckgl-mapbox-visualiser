@@ -29,7 +29,7 @@ const Home = () => {
       ...position,
       latitude: parseFloat(e.latitude),
       longitude: parseFloat(e.longitude),
-      zoom: 5.5,
+      zoom: parseFloat(e.zoom),
     });
     setSelectedLayers({
       name: e.name,

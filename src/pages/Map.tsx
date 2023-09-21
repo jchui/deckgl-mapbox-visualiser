@@ -3,6 +3,7 @@ import DeckGL, {
   ScatterplotLayer,
   HexagonLayer,
   GreatCircleLayer,
+  ArcLayer,
   //   @ts-ignore
 } from "deck.gl";
 import { Map } from "react-map-gl";
@@ -51,12 +52,25 @@ const MapCanvas = ({ position, activeLayers }: any) => {
           getTargetPosition: (d: any) => d.to.coordinates,
           getSourceColor: [64, 255, 0],
           getTargetColor: [0, 128, 200],
-          widthMinPixels: 5,
+          widthMinPixels: e.width,
           extruded: true, // Enable extrusion
           getElevation: (d: any) => 1000,
           pickable: true,
         });
         return greatCircleLayer;
+      } else if (e.layer === "arc") {
+        const arcLayer = new ArcLayer({
+          id: e.name,
+          data: e.json,
+          getSourcePosition: (d: any) => d.from.coordinates,
+          getTargetPosition: (d: any) => d.to.coordinates,
+          getSourceColor: [64, 255, 0],
+          getTargetColor: [0, 128, 200],
+          getWidth: e.width,
+          extruded: true, // Enable extrusion
+          pickable: true,
+        });
+        return arcLayer;
       }
     });
   }, [activeLayers]);
