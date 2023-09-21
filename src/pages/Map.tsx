@@ -115,7 +115,7 @@ function MapCanvas({ position, activeLayers }: any) {
             if (object?.object?.name) { // Scatterplot Layer
               tooltipName = object.object.name;
             } else if (object?.object?.from?.name) { // Arc Layer
-              tooltipName = object.object.from.name + object.object.to.name;
+              tooltipName = `${object.object.from.name} to ${object.object.to.name}`;
             }
 
             const lat = object?.coordinate[0];
