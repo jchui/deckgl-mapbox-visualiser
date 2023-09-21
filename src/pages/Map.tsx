@@ -3,15 +3,15 @@ import DeckGL, {
   HexagonLayer,
   GreatCircleLayer,
   ArcLayer,
-} from "deck.gl";
-import { Map } from "react-map-gl";
-import { useMemo, useState } from "react";
-import Loader from "../components/Loader";
+} from 'deck.gl';
+import { Map } from 'react-map-gl';
+import { useMemo, useState } from 'react';
+import Loader from '../components/Loader';
 
-const MAP_STYLE = "https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json";
+const MAP_STYLE = 'https://basemaps.cartocdn.com/gl/dark-matter-nolabels-gl-style/style.json';
 const MAPBOX_ACCESS_TOKEN = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
-const MapCanvas = ({ position, activeLayers }: any) => {
+function MapCanvas({ position, activeLayers }: any) {
   const [isLoading, setIsLoading] = useState(true);
 
   const layers = useMemo(() => {
@@ -19,7 +19,7 @@ const MapCanvas = ({ position, activeLayers }: any) => {
 
     return activeLayers.map((e: any) => {
       switch (e.layer) {
-        case "scatterplot":
+        case 'scatterplot':
           return new ScatterplotLayer({
             id: e.name,
             data: e.json,
@@ -31,7 +31,7 @@ const MapCanvas = ({ position, activeLayers }: any) => {
             pickable: true,
           });
 
-        case "hexagon":
+        case 'hexagon':
           return new HexagonLayer({
             id: e.name,
             data: e.json,
@@ -44,7 +44,7 @@ const MapCanvas = ({ position, activeLayers }: any) => {
             pickable: true,
           });
 
-        case "greatcircle":
+        case 'greatcircle':
           return new GreatCircleLayer({
             id: e.name,
             data: e.json,
@@ -58,7 +58,7 @@ const MapCanvas = ({ position, activeLayers }: any) => {
             pickable: true,
           });
 
-        case "arc":
+        case 'arc':
           return new ArcLayer({
             id: e.name,
             data: e.json,
@@ -84,19 +84,22 @@ const MapCanvas = ({ position, activeLayers }: any) => {
     zoom: position.zoom,
     maxZoom: 16,
     pitch: 0,
-    bearing: 0
+    bearing: 0,
   };
 
   return (
     <>
       {isLoading && (
-        <div style={{ position: "absolute", zIndex: 1000, left: "50%", top: "50%" }}>
+        <div style={{
+          position: 'absolute', zIndex: 1000, left: '50%', top: '50%',
+        }}
+        >
           <Loader />
         </div>
       )}
       <DeckGL
         initialViewState={INITIAL_VIEW_STATE}
-        controller={true}
+        controller
         layers={layers || []}
         onWebGLInitialized={() => setIsLoading(false)}
         getTooltip={(object: any) => {
@@ -124,6 +127,6 @@ const MapCanvas = ({ position, activeLayers }: any) => {
       </DeckGL>
     </>
   );
-};
+}
 
 export default MapCanvas;

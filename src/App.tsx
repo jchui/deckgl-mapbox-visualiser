@@ -1,10 +1,9 @@
-import "./App.scss";
-import Home from "./pages/Home";
+import './App.scss';
+import Home from './pages/Home';
+
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <Home />
   );
 }
 

@@ -1,9 +1,9 @@
-import { useState } from "react";
-import layers from "../assets/layers";
-import MapCanvas from "./Map";
-import { AiFillDatabase } from "react-icons/ai";
+import { useState } from 'react';
+import { AiFillDatabase } from 'react-icons/ai';
+import layers from '../assets/layers';
+import MapCanvas from './Map';
 
-const Home = () => {
+function Home() {
   const [selectedLayers, setSelectedLayers] = useState<any>([]);
   const [layerData, setLayerData] = useState<any>(layers);
   const [position, setPosition] = useState({
@@ -32,20 +32,18 @@ const Home = () => {
 
     setSelectedLayers({ name: e.name });
 
-    setLayerData((prev: any) => {
-      return prev.map((layer: any) => {
-        if (layer.id === e.id) {
-          return { ...layer, isShown: !layer.isShown };
-        }
-        return layer;
-      });
-    });
+    setLayerData((prev: any) => prev.map((layer: any) => {
+      if (layer.id === e.id) {
+        return { ...layer, isShown: !layer.isShown };
+      }
+      return layer;
+    }));
   };
 
   const activeLayers = layerData.filter((e: any) => e.isShown);
 
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: 'hidden' }}>
       <div className="logo">
         <h1>Healthcare Data Visualisation</h1>
         <p>Description goes here</p>
@@ -78,14 +76,21 @@ const Home = () => {
                 <p className="description">{e.description}</p>
                 <p className="source">{e.source}</p>
                 <span className="active">Active</span>
-                <span className="layer-type">Type: {e.layer}</span>
+                <span className="layer-type">
+                  Type:
+                  {e.layer}
+                </span>
               </span>
             </div>
           ))}
         </div>
 
         <div className="menu-footer">
-          <p>{layerData.length} datasets ready for visualisation.</p>
+          <p>
+            {layerData.length}
+            {' '}
+            datasets ready for visualisation.
+          </p>
         </div>
       </div>
 
@@ -95,11 +100,11 @@ const Home = () => {
         </p>
       </div>
 
-      <div style={{ height: "100vh", width: "100vw", position: "relative" }}>
+      <div style={{ height: '100vh', width: '100vw', position: 'relative' }}>
         <MapCanvas position={position} activeLayers={activeLayers} />
       </div>
     </div>
   );
-};
+}
 
 export default Home;
