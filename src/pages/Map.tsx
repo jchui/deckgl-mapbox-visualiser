@@ -83,6 +83,8 @@ const MapCanvas = ({ position, activeLayers }: any) => {
     longitude: position.longitude,
     zoom: position.zoom,
     maxZoom: 16,
+    pitch: 0,
+    bearing: 0
   };
 
   return (
