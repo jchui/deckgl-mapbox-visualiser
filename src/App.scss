@@ -20,7 +20,6 @@ body {
 }
 .card .btn-container button {
   width: 100%;
-  height: 42px;
   background-color: transparent;
   border: none;
   margin-top: 10px;
@@ -28,8 +27,6 @@ body {
   text-align: left;
   padding: 0px 30px;
   cursor: pointer;
-  text-transform: capitalize;
-  outline: none;
 }
 .card .btn-container div:nth-child(odd) {
   background-color: #e1fec9;
@@ -37,3 +34,16 @@ body {
 .card .btn-container button:hover {
   opacity: 0.8;
 }
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-select-toggle {
+  display: none; 
+}
+
+input:checked + .checkbox-select-toggle { 
+  display: block;
+  font-size: 10px;
+ }
