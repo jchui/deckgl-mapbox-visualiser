@@ -7,8 +7,6 @@ import DeckGL, {
 } from "deck.gl";
 import { Map } from "react-map-gl";
 import { useMemo, useState } from "react";
-// import mapbox css
-
 import Loader from "../components/Loader";
 const MALE_COLOR = [0, 128, 255];
 const FEMALE_COLOR = [255, 0, 128];

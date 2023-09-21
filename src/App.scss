@@ -1,49 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
 * {
   margin: 0;
 }
+
 body {
   background-color: #151515;
-}
-.card {
-  width: 290px;
-  height: 340px;
-  overflow-y: scroll;
-  border-radius: 15px;
-  background: #e0e0e0;
-  position: absolute;
-  z-index: 100;
-  right: 0px;
-  top: 5px;
-}
-.card .heading {
-  padding: 20px;
-}
-.card .btn-container button {
-  width: 100%;
-  background-color: transparent;
-  border: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  text-align: left;
-  padding: 0px 30px;
-  cursor: pointer;
-}
-.card .btn-container div:nth-child(odd) {
-  background-color: #e1fec9;
-}
-.card .btn-container button:hover {
-  opacity: 0.8;
+  font-family: 'Montserrat';
 }
 
-input[type="checkbox"] {
-  display: none;
+p {
+  margin: 0;
+  padding: 0;
 }
 
-.checkbox-select-toggle {
-  display: none; 
-}
+.logo {
+  color: #fff;
 
-input:checked + .checkbox-select-toggle { 
   display: block;
-  font-size: 10px;
- }
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  z-index: 100;
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.menu {
+  display: block;
+  background-color: #fff;
+  padding: 25px;
+  width: 300px;
+  border-radius: 10px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 100;
+  font-size: 12px;
+
+  .menu-header {
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .description {
+      line-height: 18px;
+      padding-top: 5px;
+    }
+  }
+
+  .datasets-list {
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+
+    .dataset {
+      background-color: #B8D8D8;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 13px;
+      margin: 10px 0;
+
+      a {
+        cursor: pointer;
+        display:flex;
+
+        .icon {
+          padding-right: 5px;
+          position: relative;
+          top: 1px;
+        }
+      }
+
+      .description {
+        line-height: 15px;
+        padding-top: 5px;
+        margin-left: 18px;
+      }
+
+      .source {
+        padding-top: 3px;
+        margin-left: 18px;
+        color: #0168bb;
+      }
+
+      .active {
+        padding: 3px 5px;
+        background-color: #03da40;
+        color: #00320e;
+        border-radius: 3px;
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+
+      .layer-type {
+        padding: 3px 5px;
+        background-color: #e0e0e0;
+        border-radius: 3px;
+        display: inline-block;
+        margin-top: 10px;
+      }
+
+      input[type="checkbox"], .checkbox-select-toggle {
+        display: none;
+      }
+
+      input:checked + .checkbox-select-toggle {
+        display: block;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 25px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  z-index: 100;
+  opacity: 0.6;
+}

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import layers from "../assets/layers";
 import MapCanvas from "./Map";
+import { AiFillDatabase } from "react-icons/ai";
+
 const Home = () => {
   const [selectedLayers, setSelectedLayers] = useState([]) as any;
   const [layerData, setLayerData] = useState(layers) as any;
@@ -55,41 +57,56 @@ const Home = () => {
         overflow: "hidden",
       }}
     >
-      <div className="card">
-        <div className="heading">
-          <p>Select a data source</p>
-          <p>{layerData.length} data source available</p>
+
+      <div className="logo">
+        <h1>Healthcare Data Visualisation</h1>
+        <p>Description goes here</p>
+      </div>
+
+      <div className="menu">
+        <div className="menu-header">
+          <p className="title">Healthcare Datasets</p>
+          <p className="description">
+          Visualize and explore UK healthcare data on an interactive map. 
+          </p>
         </div>
-        <div className="btn-container">
+
+        <div className="datasets-list">
           {layerData?.map((e: any, index: any) => (
-            <div
-              key={index}
-              style={{
-                borderLeft: `${
-                  e.name === selectedLayers?.name ? "8px solid green" : "none"
-                }`,
-                display: "flex",
-              }}
-            >
-              <button onClick={() => handleActiveLayers(e)}>
-                <h4>{e.name}</h4>
-                <p>{e.layer}</p>
-              </button>
-              <input
-                id="toggle"
-                checked={
-                  layerData.find((layer: any) => layer.id === e.id).isShown
-                }
-                onChange={() => toggleLayer(e)}
-                type="checkbox"
-                style={{
-                  marginRight: "10px",
-                  width: "20px",
-                }}
-              />
-            </div>
-          ))}
+              <div
+                key={index}
+                className="dataset"
+              >
+                <a onClick={() => handleActiveLayers(e)}>
+                  <div className="icon"><AiFillDatabase /> </div>
+                  <h4>{e.name}</h4>
+                </a>
+                <input
+                  id="toggle"
+                  checked={
+                    layerData.find((layer: any) => layer.id === e.id).isShown
+                  }
+                  onChange={() => toggleLayer(e)}
+                  type="checkbox"
+                />
+                <span className="checkbox-select-toggle">
+                  <p className="description">{e.description}</p>
+                  <p className="source">{e.source}</p>
+                  <span className="active">Active</span>
+                  <span className="layer-type">Type: {e.layer}</span>
+                </span>
+              </div>
+            ))}
         </div>
+
+        <div className="menu-footer">
+          <p>{layerData.length} datasets ready for visualisation.</p>
+        </div>
+
+      </div>
+
+      <div className="footer">
+        <p>Built in ReactJS with DeckGL and MapBox. Copyright &copy; 2023.</p>
       </div>
 
       <div
