@@ -64,6 +64,11 @@ function Home() {
           <p className="description">
             Visualize and explore UK healthcare data on an interactive map.
           </p>
+          <p className="description">
+            {layerData.length}
+            {' '}
+            datasets ready for visualisation.
+          </p>
         </div>
 
         <div className="datasets-list">
@@ -96,9 +101,7 @@ function Home() {
 
         <div className="menu-footer">
           <p>
-            {layerData.length}
-            {' '}
-            datasets ready for visualisation.
+            Hold Ctrl or Right-Click and drag to rotate the map.
           </p>
         </div>
       </div>
