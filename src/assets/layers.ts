@@ -2,6 +2,7 @@ import Hospitals from './json/Hospitals.json';
 import GPPractices from './json/GPPractices.json';
 import LondonMTN from './json/LondonMTN.json';
 import UKPopulation from './json/UKPopulation.json';
+import CareHomes from './json/Carehomes.json';
 
 const commonCoordinates = {
   longitude: -1.49,
@@ -57,6 +58,17 @@ const layers = [
     json: UKPopulation,
     opacity: 0.5,
     layer: 'hexagon',
+    isShown: false,
+    ...commonCoordinates,
+  },
+  {
+    id: 5,
+    name: 'Care Homes UK',
+    description: 'From Harry!',
+    json: CareHomes,
+    layer: 'scatterplot',
+    scatterplotColor: [255, 180, 0],
+    radius: 50,
     isShown: false,
     ...commonCoordinates,
   },

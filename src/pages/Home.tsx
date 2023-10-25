@@ -54,13 +54,15 @@ function Home() {
   return (
     <div style={{ overflow: 'hidden' }}>
       <div className="logo">
-        <h1>Healthcare Data Visualisation</h1>
-        <p>Description goes here</p>
+        <p>Healthcare Data Workshop</p>
       </div>
 
       <div className="menu">
         <div className="menu-header">
-          <p className="title">Healthcare Datasets</p>
+          <p className="title">MSc / MRes Healthcare & Design</p>
+          <p className="description">
+            Created as part of Module 2 "Principles of Design & Innovation" by the MSc Healthcare & Design Class of 2025.
+          </p>
           <p className="description">
             Visualize and explore UK healthcare data on an interactive map.
           </p>
@@ -90,7 +92,7 @@ function Home() {
                 <p className="description">{e.description}</p>
                 <p className="source">{e.source}</p>
                 <span className="active">Active</span>
-                <span className="layer-type">
+                <span className="dataset-tag">
                   Type:&nbsp;
                   {e.layer}
                 </span>
