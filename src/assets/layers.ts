@@ -1,7 +1,7 @@
 import Students from './json/Students.json';
 import LifeExpectancyMale from './json/life_expectancy_male.json';
 import LifeExpectancyFemale from './json/life_expectancy_female.json';
-import Carehomes from './json/carehomes.json';
+import Carehomes from './json/carehomes1.json';
 import Carehomes2 from './json/carehomes2.json';
 import NursingHomes from './json/nursing_homes_london.json';
 
