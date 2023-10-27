@@ -41,10 +41,10 @@ function MapCanvas({ position, activeLayers }: any) {
           return new HexagonLayer({
             id: e.name,
             data: e.json,
-            elevationRange: [0, 3000],
-            elevationScale: e.json && e.json.length ? 50 : 0,
+            elevationRange: [0, 1000],
+            elevationScale: e.json && e.json.length ? 100 : 0,
             extruded: true,
-            getColor: [255, 0, 100],
+            // colorRange: e.hexagonColor,
             opacity: e.opacity,
             getElevation: (d: any) => 100,
             getPosition: (d: any) => [d.lng, d.lat],

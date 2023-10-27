@@ -1,0 +1,19 @@
+[
+    {
+        "from": {
+            "type": "major",
+            "name": "Sample From Hospital",
+            "coordinates": [
+                -0.987654,
+                51.987654
+            ]
+        },
+        "to": {
+            "name": "Sample To Hospital",
+            "coordinates": [
+                -0.654321,
+                51.654321
+            ]
+        }
+    }
+]
